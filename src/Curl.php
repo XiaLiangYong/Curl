@@ -25,12 +25,12 @@ class Curl
 
     public function __call($method, $params)
     {
-        return call_user_func_array([self::$instance, $method], $params);
+        return call_user_func_array([self::getInstance(), $method], $params);
     }
 
 
     public static function __callStatic($method, $args)
     {
-        return call_user_func_array([self::$instance, $method], $args);
+        return call_user_func_array([self::getInstance(), $method], $args);
     }
 }
